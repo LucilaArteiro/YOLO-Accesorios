@@ -440,7 +440,7 @@ const initialData = {
     secondary: '#f500a1',
     accent: '#ffdf00',
 
-    heroImage: 'assets/portadas/hero.jpg',
+    heroImage: 'assets/portadas/hero.png',
 
     heroTitle: 'Tu celular. Tu estilo.',
 
@@ -1045,7 +1045,6 @@ function clearFilters () {
 }
 
 on('store-search', 'input', renderCatalog)
-
 ;['filter-category', 'filter-model', 'filter-color', 'filter-price'].forEach(
   id => on(id, 'change', renderCatalog)
 )
@@ -1085,7 +1084,6 @@ function fillSelect (id, items, firstOption) {
     `
     )
     .join('')
-
   ;[...select.options].forEach(option => {
     option.selected = previous.includes(option.value)
   })
@@ -2839,7 +2837,6 @@ function editPromotion (id) {
   $('promotion-end').value = promo.end
 
   $('promotion-active').checked = promo.active
-
   ;[...$('promotion-products').options].forEach(option => {
     option.selected = promo.products.includes(option.value)
   })
@@ -3030,7 +3027,6 @@ function moveSection (index, direction) {
   const next = index + direction
 
   if (next < 0 || next >= sectionOrder.length) return
-
   ;[sectionOrder[index], sectionOrder[next]] = [
     sectionOrder[next],
     sectionOrder[index]
